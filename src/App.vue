@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome to Stock Tracker</h1>
+    <router-view></router-view>
   </div>
 </template>
 
