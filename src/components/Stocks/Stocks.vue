@@ -1,6 +1,6 @@
 <template>
   <div class="row mt-2">
-    <Stock v-for="stock in stocks" :key="stock.id" />
+    <Stock v-for="stock in stocks" :key="stock.id" :stock="stock" />
   </div>
 </template>
 
