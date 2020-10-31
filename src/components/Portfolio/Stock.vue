@@ -9,7 +9,7 @@
       <div class="card-body">
         <form action="" class="form-inline d-flex justify-content-between">
           <input type="number" class="form-control form-control-dark" min="0" v-model="quantity" />
-          <button type="button" class="btn btn-dark" @click="sellStock">
+          <button type="button" class="btn btn-info" @click="sellStock">
             Sell
           </button>
         </form>
@@ -29,14 +29,17 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["sellStock"]),
+    ...mapActions({
+      sellStockAction: "sellStock"
+    }),
     sellStock() {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      this.sellStock(order);
+      this.sellStockAction(order);
+      this.quantity = 0;
     }
   }
 };
