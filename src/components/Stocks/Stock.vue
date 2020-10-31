@@ -8,7 +8,7 @@
       </div>
       <div class="card-body">
         <form action="" class="form-inline d-flex justify-content-between">
-          <input type="number" class="form-control form-control-dark" min="0" v-model="quantity" />
+          <input type="number" class="form-control form-control-dark" min="0" v-model.number="quantity" />
           <button type="button" class="btn btn-dark" @click="buyStock">
             Buy
           </button>
@@ -34,8 +34,7 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      console.log(order);
-
+      this.$store.dispatch("buyStock", order);
       this.quantity = 0;
     }
   }
